@@ -18,7 +18,7 @@ import com.bispo.crm.repository.ClienteRepository;
 @RequestMapping("/clientes")
 public class ClienteController {
 
-	@Autowired
+	// @Autowired  FIXME Entender o por quê...
 	private ClienteRepository clienteRepository;
 	
 	@GetMapping

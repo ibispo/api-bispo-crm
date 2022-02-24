@@ -1,42 +1,33 @@
-package com.bispo.crm;
+package com.bispo.crm.service;
 
 import java.time.LocalDate;
 
-import org.junit.Before;
-import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
-import org.junit.runner.RunWith;
 import org.mockito.Mockito;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.TestConfiguration;
-import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.context.annotation.Bean;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import com.bispo.crm.model.Booking;
 import com.bispo.crm.repository.BookingRepository;
-import com.bispo.crm.service.BookingService;
 
-@RunWith(SpringRunner.class)
+// @RunWith(SpringRunner.class)
 public class BookingServiceTest {
 
-	@TestConfiguration
+	// @TestConfiguration
 	static class BookingServiceTestConfiguration {
 
-		@Bean
+		// @Bean
 		public BookingService bookingService() {
 			return new BookingService();
 		}
 		
 	}
 	
-	@Autowired
+	// @Autowired
 	BookingService bookingService;
 	
-	@MockBean
+	// @MockBean
 	BookingRepository bookingRepository;
 	
-	@Test
+	// @Test
 	public void bookingTestServiceDaysCalculator() {
 		String name = "Bispo";
 		int nroDias = bookingService.daysCalculatorWithDatabase(name);
@@ -44,7 +35,7 @@ public class BookingServiceTest {
 		Assertions.assertEquals(nroDias, 10);
 	}
 	
-	@Before
+	// @Before
 	public void setup() {
 		LocalDate checkIn = LocalDate.parse("2021-02-10");
 		LocalDate checkOut = LocalDate.parse("2021-02-20");
